@@ -1,6 +1,6 @@
 # HW02
 ## 測試環境
-	- sp1.cs.ccu.edu.tw 系統程式開的
+- sp1.cs.ccu.edu.tw 系統程式開的
 - 大小：10M
 
 ## 測試結果
