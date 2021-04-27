@@ -6,11 +6,11 @@ all: ./mergesort ./quicksort ./heapsort
 help:
 	echo run make run to measure the time of sorting algorithms.
 ./mergesort ./quicksort ./heapsort: main
-	ln -s main ./mergesort
-	ln -s main ./heapsort
-	ln -s main ./quicksort
-main:
-	${CC} -o main *.c
+	ln -sf main ./mergesort
+	ln -sf main ./heapsort
+	ln -sf main ./quicksort
+main: $(wildcard *.c) $(wildcard *.h)
+	${CC} -o main *.c -O2
 
 clean:
 	rm -f ./main ./mergesort ./quicksort ./heapsort
