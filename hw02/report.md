@@ -35,8 +35,18 @@ sys     0m0.032s
 
 ## 額外測試
 ### MultiThreading QuickSort
-- size: 1e9
+- size: 1e7, 1e9
 - 32 cores CPU
+
+#### 1e7
+```
+排序部分時間：0.156527 s
+real    0m0.317s
+user    0m1.433s
+sys     0m0.057s
+```
+
+#### 1e9
 ```
 排序部分時間：13.389705 s
 real    0m27.998s
