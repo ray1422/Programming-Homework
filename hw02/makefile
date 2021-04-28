@@ -10,7 +10,7 @@ help:
 	ln -sf main ./heapsort
 	ln -sf main ./quicksort
 main: $(wildcard *.c) $(wildcard *.h)
-	${CC} -o main *.c -O2
+	${CC} -o main *.c -O2 -pthread
 
 clean:
 	rm -f ./main ./mergesort ./quicksort ./heapsort
