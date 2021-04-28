@@ -34,7 +34,7 @@ sys     0m0.032s
 ```
 
 ## 額外測試
-### MultiThreading QuickSort
+### Multithreading QuickSort
 - size: 1e7, 1e9
 - 32 cores CPU
 
