@@ -60,7 +60,7 @@ static int array_query(void* n, const char* v_tmp) {
         while (mid >= l->len) mid--;
         // fprintf(stderr, "%d %s\n", mid, arr[mid]->val);
         if (high - low == 1) {
-            if (low < l->len && astring_cmp(v, arr[mid]) == 0) {
+            if (low < l->len && astr_eq(v, arr[mid])) {
                 astring_del(v);
                 return 1;
             } else {

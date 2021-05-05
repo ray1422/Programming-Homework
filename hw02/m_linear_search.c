@@ -38,7 +38,7 @@ static int array_query(void* n, const char* v_val) {
     AString* v = astring_new(v_val);
     LinearArray* l = n;
     for (int i = 0; i < l->len; i++) {
-        if (astring_cmp(v, l->arr[i])) {
+        if (astring_cmp(v, l->arr[i]) == 0) {
             astring_del(v);
             return 1;
         }

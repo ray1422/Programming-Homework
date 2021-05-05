@@ -25,3 +25,11 @@ char *gen_unique_str(char *hashed_str) {
     hashed_str[MD5_DIGEST_LENGTH * 2] = '\0';
     return hashed_str;
 }
+
+char *gen_unique_mono_str(char *str) {
+    char buf[8192];
+    struct timespec now = {0, 0};
+    clock_gettime(CLOCK_MONOTONIC, &now);
+    sprintf(buf, "%ld", now.tv_nsec);
+    return strcpy(str, buf);
+}

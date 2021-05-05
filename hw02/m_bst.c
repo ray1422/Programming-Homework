@@ -54,7 +54,7 @@ static int bst_insert(void* n, const char* const v_val) {
     BST* bst = n;
     if (n == nil) return 1;
     bst->top = bst_insert_astr(bst->top, astring_new(v_val));
-    return 0;
+    return (bst->top == nil);
 }
 static Node* bst_query_astr(Node* top, AString* v) {
     if (top == nil) return nil;
@@ -65,7 +65,7 @@ static Node* bst_query_astr(Node* top, AString* v) {
     if (cmp_res < 0) {
         return bst_query_astr(top->left, v);
     } else {
-        return bst_query_astr(top->left, v);
+        return bst_query_astr(top->right, v);
     }
 }
 static int bst_query(void* n, const char* v_val) {

@@ -6,5 +6,5 @@ typedef struct Method {
     void (*deconstructor)(void* data);
 } Method;
 
-extern Method m_binary_search, m_linear_search, m_bst, m_llist;
+extern Method m_binary_search, m_linear_search, m_bst, m_llist, m_treap;
 
