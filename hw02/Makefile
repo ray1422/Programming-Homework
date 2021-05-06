@@ -8,7 +8,7 @@ OBJS=$(patsubst %.c,${OBJDIR}/%.o,${SRC})
 TARGET=bin/hw02
 
 DBG_LD_FLAGS=-lcrypto
-DBG_CFLAGS=-g -fsanitize=undefined -fsanitize=address -fsanitize=leak -Wall
+DBG_CFLAGS=-g # -fsanitize=undefined -fsanitize=address -fsanitize=leak -Wall
 DBG_OBJDIR=/tmp/dbg
 DBG_OBJS=$(patsubst %.c,${DBG_OBJDIR}/%.o,${SRC})
 DBG_TARGET=bin/hw02_debug

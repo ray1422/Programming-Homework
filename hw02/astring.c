@@ -4,7 +4,7 @@ static int astring_hashcode(char *str) {
     if (l > 6) l = 6;
     int hashcode = 0;
     for (int i = 0; i < l; i++) {
-        if (hashcode > 21744800 / 31) hashcode %= 100007;
+        if (hashcode > 2147483647 / 100) hashcode %= 100007;
         hashcode *= 31;
         hashcode += str[i];
     }
