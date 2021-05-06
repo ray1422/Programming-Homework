@@ -39,3 +39,25 @@ ${DBG_OBJDIR}/%.o: %.c *.h
 clean:
 	rm -f ${TARGET} ${OBJS}
 	rm -f ${DBG_TARGET} ${DBG_OBJS}
+
+test: ${TARGET}
+	${TARGET} linked_list 1e5
+	${TARGET} linear 1e5
+	${TARGET} binary_search 1e5
+	${TARGET} bst 1e5
+	${TARGET} treap 1e5
+
+test_mid: ${TARGET}
+	${TARGET} binary_search 1e6
+	${TARGET} bst 1e6
+	${TARGET} treap 1e6
+	
+test_mid_mono: ${TARGET}
+	${TARGET} binary_search 1e6 --mono
+	${TARGET} bst 1e6 --mono
+	${TARGET} treap 1e6 --mono
+
+test_large: ${TARGET}
+	${TARGET} binary_search 1e7
+	${TARGET} bst 1e7
+	${TARGET} treap 1e7

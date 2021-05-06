@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
     int test_size = data_size / 10;
     double insert_mean = 0., query_mean = 0.;
     for (int i = 0; i < 3; i++) {  // 測 3 次
-        char* query_pool[data_size];
+        char** query_pool =calloc(data_size, sizeof(char*));
         double insert_cost = 0., query_cost = 0.;
         void* data = method.constructor(data_size);
         double md5_cost = 0., md5_cost_local = 0.;
@@ -102,8 +102,12 @@ int main(int argc, char* argv[]) {
         insert_mean = (insert_mean * i + insert_cost) / (i + 1);
         query_mean = (query_mean * i + query_cost) / (i + 1);
         fprintf(stderr,
+                "\r"
+                "(%d / 3) "
                 "ins_time: %.4lfs, ins_mean: %.4lfs, que_time: %.4lfs, "
-                "que_mean: %.4lfs, gen: %.4lfs\n",
-                insert_cost, insert_mean, query_cost, query_mean, md5_cost);
+                "que_mean: %.4lfs, gen: %.4lfs",
+                i+1, insert_cost, insert_mean, query_cost, query_mean, md5_cost);
+        free(query_pool);
     }
+    fprintf(stderr, "\n\n");
 }
