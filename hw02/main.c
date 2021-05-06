@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
                     if (rand() % 5 == 1) {
                         query_idx += 1;
                         query_idx %= test_size;
-						if (query_pool[query_idx] != nil) free(query_pool[query_idx]);
+			if (query_pool[query_idx] != nil) free(query_pool[query_idx]);
                         query_pool[query_idx] = strdup(buf);
                     }
                 });
