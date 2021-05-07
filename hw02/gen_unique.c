@@ -26,6 +26,7 @@ char *gen_unique_str(char *hashed_str) {
     return hashed_str;
 }
 
+// impl is buggy.
 char *gen_unique_mono_str(char *str) {
     char buf[8192];
     struct timespec now = {0, 0};
